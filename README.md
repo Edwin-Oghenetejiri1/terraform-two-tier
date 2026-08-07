@@ -180,7 +180,7 @@ nc -zv $(terraform output -raw db_endpoint | cut -d: -f1) 3306
 ![RDS Running](./screenshots/rds-running.png)
 
 ### Live Webpage
-![Webpage](./screenshots/webpage.png)
+![Webpage](./screenshots/webpagenew.png)
 
 ## Tearing Down
 
