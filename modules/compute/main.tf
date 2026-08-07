@@ -12,7 +12,7 @@ data "aws_ami" "latest_amazon_linux" {
 }
 
 resource "aws_key_pair" "deployer" {
-  key_name   = "deployer-key"
+  key_name   = var.key_name
   public_key = file(var.public_key_path)
 }
 
@@ -24,7 +24,7 @@ resource "aws_instance" "web" {
   associate_public_ip_address = true
   key_name                    = aws_key_pair.deployer.key_name
 
-  user_data = <<-EOF
+user_data = <<-EOF
     #!/bin/bash
     dnf update -y
     dnf install nginx -y
@@ -33,7 +33,36 @@ resource "aws_instance" "web" {
     cat > /usr/share/nginx/html/index.html <<'HTML'
     <!DOCTYPE html>
     <html>
-    ...
+    <head>
+      <title>HUG Terraform Challenge</title>
+      <style>
+        body {
+          font-family: Arial, sans-serif;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background: #1a1a2e;
+          color: white;
+        }
+        .container {
+          text-align: center;
+          padding: 40px;
+          border: 2px solid #e94560;
+          border-radius: 10px;
+        }
+        h1 { color: #e94560; font-size: 2.5rem; }
+        h2 { color: #4ecca3; font-size: 1.5rem; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1>Oghenetejiri Edwin</h1>
+        <h2>HUG Lagos/Ibadan Terraform Challenge</h2>
+      </div>
+    </body>
+    </html>
     HTML
   EOF
 

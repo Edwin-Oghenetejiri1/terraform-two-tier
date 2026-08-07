@@ -9,7 +9,7 @@ terraform {
   }
 
   backend "s3" {
-    bucket         = "YOUR-UNIQUE-TFSTATE-BUCKET-NAME"
+    bucket         = "terraform-challenge-bucket-edwin"
     key            = "hug-terraform-challenge/terraform.tfstate"
     region         = "us-east-1"
     dynamodb_table = "terraform-locks"
