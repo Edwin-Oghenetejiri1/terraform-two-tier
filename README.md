@@ -177,7 +177,7 @@ All deliverable screenshots are stored in the [`/screenshots`](./screenshots) fo
 | `screenshots/vpc.png` | VPC console view showing the created VPC |
 | `screenshots/ec2-running.png` | EC2 console showing the compute instance in "Running" state |
 | `screenshots/rds-running.png` | RDS console showing the database instance in "Available" state |
-| `screenshots/webpage.png` | Browser screenshot of the live Nginx webpage |
+| `screenshots/webpagenew.png` | Browser screenshot of the live Nginx webpage |
 
 ## Tearing Down
 
