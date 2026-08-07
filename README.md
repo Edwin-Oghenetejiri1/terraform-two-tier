@@ -55,7 +55,7 @@ terraform-two-tier/
 ├── outputs.tf                 # Root outputs
 ├── versions.tf                # Provider + remote state backend config
 ├── terraform.tfvars           # Variable values (gitignored — not committed)
-├── screenshots/                # Deliverable screenshots (see below)
+├── screenshots/                # Deliverable screenshots
 ├── .gitignore
 └── README.md
 ```
@@ -170,14 +170,17 @@ nc -zv $(terraform output -raw db_endpoint | cut -d: -f1) 3306
 
 ## Screenshots
 
-All deliverable screenshots are stored in the [`/screenshots`](./screenshots) folder:
+### VPC
+![VPC](./screenshots/vpc.png)
 
-| File | Description |
-|---|---|
-| `screenshots/vpc.png` | VPC console view showing the created VPC |
-| `screenshots/ec2-running.png` | EC2 console showing the compute instance in "Running" state |
-| `screenshots/rds-running.png` | RDS console showing the database instance in "Available" state |
-| `screenshots/webpagenew.png` | Browser screenshot of the live Nginx webpage |
+### EC2 Instance Running
+![EC2 Running](./screenshots/ec2-running.png)
+
+### RDS Instance Running
+![RDS Running](./screenshots/rds-running.png)
+
+### Live Webpage
+![Webpage](./screenshots/webpage.png)
 
 ## Tearing Down
 
